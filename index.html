@@ -1,153 +1,719 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Imam Hosen Sujan | Cybersecurity Portfolio</title>
 
+    <meta name="description"
+        content="Imam Hosen Sujan - Cybersecurity Enthusiast, Network Support Technician and IT Professional.">
+
     <link rel="stylesheet" href="style.css">
+
+    <!-- Icons -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
 <body>
 
-    <!-- Hero Section -->
-    <section class="hero">
+<!-- ================= NAVBAR ================= -->
 
-        <h1>Hi, I'm Imam Hosen Sujan</h1>
+<header class="navbar">
 
-        <p>
-            Aspiring Cyber Security Professional |
-            Networking & IT Support Specialist
+    <a href="#home" class="logo">
+        <span>&lt;</span> Imam<span>/&gt;</span>
+    </a>
+
+    <nav id="navMenu">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#journey">Journey</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <button class="menu-btn" id="menuBtn">
+        <i class="fas fa-bars"></i>
+    </button>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-grid"></div>
+
+    <div class="hero-content">
+
+        <div class="status">
+            <span class="status-dot"></span>
+            Currently learning Cybersecurity
+        </div>
+
+        <p class="terminal-line">
+            <span>root@imam:~$</span> whoami
         </p>
 
-        <p>
-            A personal virtual lab for learning Linux and Cyber Security fundamentals.
-        </p>
+        <h1>
+            Imam Hosen<br>
+            <span>Sujan</span>
+        </h1>
 
-    </section>
+        <div class="typing-wrapper">
+            <span class="typing-prefix">I'm a </span>
+            <span id="typing"></span>
+            <span class="cursor">|</span>
+        </div>
 
-
-    <!-- About Me -->
-    <section class="section">
-
-        <h2>About Me</h2>
-
-        <p>
-            I am an IT professional with practical experience in
-            networking, computer hardware, IT support and troubleshooting.
-            Currently, I am developing my skills in Linux, Cyber Security
+        <p class="hero-description">
+            IT professional with practical experience in networking,
+            hardware, technical support and troubleshooting —
+            currently building expertise in Linux, Cybersecurity
             and Ethical Hacking.
         </p>
 
-    </section>
+        <div class="hero-buttons">
 
+            <a href="#projects" class="btn primary">
+                <i class="fas fa-terminal"></i>
+                Explore My Work
+            </a>
 
-    <!-- Skills -->
-    <section class="section">
+            <a href="#contact" class="btn secondary">
+                <i class="fas fa-paper-plane"></i>
+                Contact Me
+            </a>
 
-        <h2>Skills</h2>
+        </div>
 
-        <div class="project">
+        <div class="social-links">
 
-            <h3>Networking</h3>
+            <a href="#" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+
+            <a href="#" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+
+            <a href="#" aria-label="Email">
+                <i class="fas fa-envelope"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- Terminal Card -->
+
+    <div class="terminal-card">
+
+        <div class="terminal-header">
+            <div class="terminal-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <span>imam@cyber-lab</span>
+        </div>
+
+        <div class="terminal-body">
 
             <p>
-                Network configuration, troubleshooting,
-                LAN support and network maintenance.
+                <span class="green">imam@kali</span>:
+                <span class="blue">~</span>$ neofetch
+            </p>
+
+            <br>
+
+            <p class="terminal-green">IMAM HOSEN SUJAN</p>
+
+            <p>-------------------------</p>
+
+            <p>OS       : Kali Linux</p>
+            <p>Focus    : Cybersecurity</p>
+            <p>Network  : TCP/IP</p>
+            <p>Learning : Ethical Hacking</p>
+            <p>Lab      : VirtualBox</p>
+
+            <br>
+
+            <p>
+                <span class="green">imam@kali</span>:
+                <span class="blue">~</span>$ <span class="blink">_</span>
             </p>
 
         </div>
 
-        <div class="project">
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="section about" id="about">
+
+    <div class="section-label">
+        <span>01</span> ABOUT ME
+    </div>
+    <div class="section-title">
+        <h2>Building skills.<br><span>Breaking limits.</span></h2>
+    </div>
+
+    <div class="about-grid">
+
+        <div class="about-text">
+
+            <p>
+                I am an IT professional with hands-on experience in
+                networking, computer hardware, software installation,
+                troubleshooting and end-user technical support.
+            </p>
+
+            <p>
+                My current goal is to transition deeper into
+                <strong>Cybersecurity and Ethical Hacking</strong>.
+                I am developing practical knowledge through Linux,
+                networking and virtual security labs.
+            </p>
+
+            <p>
+                I believe cybersecurity is not only about tools —
+                it is about understanding how systems work,
+                identifying weaknesses and continuously learning.
+            </p>
+
+        </div>
+
+        <div class="about-stats">
+
+            <div class="stat">
+                <strong>5+</strong>
+                <span>Years IT Experience</span>
+            </div>
+
+            <div class="stat">
+                <strong>24/7</strong>
+                <span>Learning Mindset</span>
+            </div>
+
+            <div class="stat">
+                <strong>01</strong>
+                <span>Cybersecurity Goal</span>
+            </div>
+
+            <div class="stat">
+                <strong>∞</strong>
+                <span>Curiosity</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SKILLS ================= -->
+
+<section class="section skills-section" id="skills">
+
+    <div class="section-label">
+        <span>02</span> SKILLS
+    </div>
+
+    <div class="section-title center">
+        <h2>My Technical <span>Toolkit</span></h2>
+        <p>
+            Technologies and areas I use, practice and continue to learn.
+        </p>
+    </div>
+
+    <div class="skills-grid">
+
+        <div class="skill-card">
+            <div class="skill-icon">
+                <i class="fas fa-network-wired"></i>
+            </div>
+
+            <h3>Networking</h3>
+
+            <p>
+                LAN, TCP/IP, network configuration,
+                troubleshooting and maintenance.
+            </p>
+
+            <div class="tags">
+                <span>TCP/IP</span>
+                <span>LAN</span>
+                <span>Troubleshooting</span>
+            </div>
+        </div>
+
+
+        <div class="skill-card">
+            <div class="skill-icon">
+                <i class="fab fa-linux"></i>
+            </div>
+
+            <h3>Linux</h3>
+
+            <p>
+                Linux command line, system administration
+                and security fundamentals.
+            </p>
+
+            <div class="tags">
+                <span>Kali Linux</span>
+                <span>CLI</span>
+                <span>VirtualBox</span>
+            </div>
+        </div>
+
+
+        <div class="skill-card">
+            <div class="skill-icon">
+                <i class="fas fa-shield-halved"></i>
+            </div>
+
+            <h3>Cybersecurity</h3>
+
+            <p>
+                Developing practical knowledge in security,
+                ethical hacking and vulnerability concepts.
+            </p>
+
+            <div class="tags">
+                <span>Security</span>
+                <span>Ethical Hacking</span>
+                <span>OWASP</span>
+            </div>
+        </div>
+
+
+        <div class="skill-card">
+            <div class="skill-icon">
+                <i class="fas fa-screwdriver-wrench"></i>
+            </div>
 
             <h3>IT Support</h3>
 
             <p>
                 Hardware maintenance, software installation,
-                troubleshooting and end-user technical support.
+                diagnostics and technical support.
             </p>
 
+            <div class="tags">
+                <span>Hardware</span>
+                <span>Software</span>
+                <span>Support</span>
+            </div>
         </div>
 
-        <div class="project">
 
-            <h3>Cyber Security</h3>
+        <div class="skill-card">
+            <div class="skill-icon">
+                <i class="fas fa-video"></i>
+            </div>
+<h3>CCTV & Monitoring</h3>
 
             <p>
-                Currently learning Cyber Security,
-                Linux and ethical hacking fundamentals.
+                CCTV installation, configuration and
+                network-based monitoring fundamentals.
             </p>
+
+            <div class="tags">
+                <span>CCTV</span>
+                <span>Monitoring</span>
+            </div>
+        </div>
+
+
+        <div class="skill-card">
+            <div class="skill-icon">
+                <i class="fas fa-file-excel"></i>
+            </div>
+
+            <h3>Microsoft Office</h3>
+
+            <p>
+                Practical experience with Word, Excel,
+                Access and PowerPoint.
+            </p>
+
+            <div class="tags">
+                <span>Word</span>
+                <span>Excel</span>
+                <span>PowerPoint</span>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= LEARNING JOURNEY ================= -->
+
+<section class="section journey" id="journey">
+
+    <div class="section-label">
+        <span>03</span> LEARNING JOURNEY
+    </div>
+
+    <div class="section-title center">
+
+        <h2>
+            From <span>IT Support</span>
+            to Cybersecurity
+        </h2>
+
+        <p>
+            My current learning roadmap.
+        </p>
+
+    </div>
+
+
+    <div class="roadmap">
+
+        <div class="roadmap-item active">
+
+            <div class="roadmap-number">01</div>
+
+            <div class="roadmap-content">
+
+                <span>FOUNDATION</span>
+
+                <h3>Networking Fundamentals</h3>
+
+                <p>
+                    TCP/IP, LAN, IP addressing,
+                    network troubleshooting and protocols.
+                </p>
+
+            </div>
 
         </div>
 
-    </section>
+
+        <div class="roadmap-item active">
+
+            <div class="roadmap-number">02</div>
+
+            <div class="roadmap-content">
+
+                <span>CURRENT</span>
+
+                <h3>Linux & Security</h3>
+
+                <p>
+                    Linux commands, Kali Linux,
+                    system administration and security concepts.
+                </p>
+
+            </div>
+
+        </div>
 
 
-    <!-- Projects -->
-    <section class="section">
+        <div class="roadmap-item">
 
-        <h2>Projects</h2>
+            <div class="roadmap-number">03</div>
 
-        <div class="project">
+            <div class="roadmap-content">
+
+                <span>NEXT</span>
+
+                <h3>Ethical Hacking</h3>
+
+                <p>
+                    Reconnaissance, scanning,
+                    vulnerability assessment and web security.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="roadmap-item">
+
+            <div class="roadmap-number">04</div>
+
+            <div class="roadmap-content">
+
+                <span>FUTURE</span>
+
+                <h3>Cybersecurity Professional</h3>
+
+                <p>
+                    Build real-world security projects,
+                    labs and professional cybersecurity skills.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PROJECTS ================= -->
+
+<section class="section projects" id="projects">
+
+    <div class="section-label">
+        <span>04</span> PROJECTS
+    </div>
+
+    <div class="section-title center">
+
+        <h2>Hands-on <span>Projects</span></h2>
+
+        <p>
+            Practical labs and technical projects
+            that demonstrate my learning.
+        </p>
+
+    </div>
+
+
+    <div class="projects-grid">
+
+        <article class="project-card featured">
+
+            <div class="project-top">
+
+                <div class="project-icon">
+                    <i class="fas fa-network-wired"></i>
+                </div>
+
+                <span class="project-status">
+                    LAB PROJECT
+                </span>
+
+            </div>
 
             <h3>Network Troubleshooting Lab</h3>
 
             <p>
-                Practical networking project focused on
-                network configuration and troubleshooting.
+                A practical networking environment focused on
+                configuration, connectivity testing,
+                troubleshooting and network maintenance.
             </p>
+<div class="project-tech">
+                <span>Networking</span>
+                <span>TCP/IP</span>
+                <span>Troubleshooting</span>
+            </div>
 
-        </div>
+        </article>
 
-        <div class="project">
 
-            <h3>Cyber Security Learning Lab</h3>
+        <article class="project-card">
+
+            <div class="project-top">
+
+                <div class="project-icon">
+                    <i class="fas fa-terminal"></i>
+                </div>
+
+                <span class="project-status">
+                    IN PROGRESS
+                </span>
+
+            </div>
+
+            <h3>Linux Security Lab</h3>
 
             <p>
-                Hands-on learning in Cyber Security, Linux
-                and ethical hacking concepts.
+                Personal virtual environment for practicing
+                Linux commands, system administration
+                and security fundamentals.
             </p>
 
-        </div>
+            <div class="project-tech">
+                <span>Kali Linux</span>
+                <span>VirtualBox</span>
+                <span>Linux</span>
+            </div>
 
-        <div class="project">
+        </article>
 
-            <h3>Linux Learning Lab</h3>
+
+        <article class="project-card">
+
+            <div class="project-top">
+
+                <div class="project-icon">
+                    <i class="fas fa-shield-halved"></i>
+                </div>
+
+                <span class="project-status">
+                    LEARNING
+                </span>
+
+            </div>
+
+            <h3>Cybersecurity Learning Lab</h3>
 
             <p>
-                A personal virtual lab for practicing Linux
-                commands, system administration and security fundamentals.
+                Hands-on cybersecurity practice covering
+                security concepts, reconnaissance,
+                networking and ethical hacking fundamentals.
             </p>
+
+            <div class="project-tech">
+                <span>Cybersecurity</span>
+                <span>Ethical Hacking</span>
+                <span>Security</span>
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- ================= EXPERIENCE ================= -->
+
+<section class="section experience" id="experience">
+
+    <div class="section-label">
+        <span>05</span> EXPERIENCE
+    </div>
+
+    <div class="section-title center">
+        <h2>Professional <span>Experience</span></h2>
+    </div>
+
+
+    <div class="experience-card">
+
+        <div class="experience-icon">
+            <i class="fas fa-server"></i>
+        </div>
+
+        <div class="experience-content">
+
+            <span>IT & NETWORKING</span>
+
+            <h3>Network Support Technician</h3>
+
+            <p>
+                Practical experience in network implementation,
+                maintenance and troubleshooting.
+            </p>
+
+            <ul>
+
+                <li>
+                    <i class="fas fa-check"></i>
+                    Network troubleshooting and maintenance
+                </li>
+
+                <li>
+                    <i class="fas fa-check"></i>
+                    Hardware replacement and maintenance
+                </li>
+
+                <li>
+                    <i class="fas fa-check"></i>
+                    Software installation and configuration
+                </li>
+
+                <li>
+                    <i class="fas fa-check"></i>
+                    End-user technical support
+                </li>
+
+                <li>
+                    <i class="fas fa-check"></i>
+                    CCTV installation and support
+                </li>
+
+            </ul>
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
-    <!-- Contact -->
-    <section class="section contact">
+<!-- ================= CONTACT ================= -->
 
-        <h2>Contact Me</h2>
+<section class="section contact" id="contact">
+
+    <div class="contact-box">
+
+        <div class="section-label">
+            <span>06</span> CONTACT
+        </div>
+
+        <h2>
+            Let's build something<br>
+            <span>secure.</span>
+        </h2>
 
         <p>
-            Thank you for visiting my portfolio.
+            I'm always interested in learning,
+            collaborating and discussing technology,
+            networking and cybersecurity.
         </p>
 
-    </section>
+        <a href="mailto:your-email@example.com"
+           class="btn primary contact-btn">
+
+            <i class="fas fa-envelope"></i>
+            Get In Touch
+
+        </a>
+
+    </div>
+
+</section>
 
 
-    <!-- Footer -->
-    <footer>
+<!-- ================= FOOTER ================= -->
 
-        <p>
-            © 2026 Imam Hossain. All Rights Reserved.
-        </p>
+<footer>
+<div class="footer-logo">
+        &lt; Imam /&gt;
+    </div>
 
-    </footer>
+    <p>
+        Designed & built by Imam Hosen Sujan
+    </p>
+
+    <p class="copyright">
+        © 2026 Imam Hosen Sujan. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+<!-- Back To Top -->
+
+<button id="topBtn" class="top-btn">
+    <i class="fas fa-arrow-up"></i>
+</button>
+
+
+<script src="script.js"></script>
 
 </body>
-
 </html>
+
