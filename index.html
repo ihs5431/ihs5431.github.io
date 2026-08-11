@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Placeholder Name — Cybersecurity Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0B0F14;
+    --panel:#121821;
+    --panel-2:#0E141C;
+    --line:#22303B;
+    --text:#D8E1E8;
+    --muted:#6B7A87;
+    --amber:#E8A33D;
+    --cyan:#4FB3BF;
+    --red:#D65A5A;
+    --mono:'IBM Plex Mono', monospace;
+    --sans:'IBM Plex Sans', sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--sans);
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none;}
+
+  /* faint grid backdrop, like a packet/hex canvas */
+  .grid-bg{
+    position:fixed; inset:0; z-index:0; pointer-events:none;
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:42px 42px;
+    opacity:0.14;
+  }
+  .scanline{
+    position:fixed; left:0; right:0; height:2px; z-index:1; pointer-events:none;
+    background:linear-gradient(90deg, transparent, var(--cyan), transparent);
+    opacity:0.35;
+    animation:scan 7s linear infinite;
+  }
+  @keyframes scan{
+    0%{top:0%;} 100%{top:100%;}
+  }
+
+  header{
+    position:sticky; top:0; z-index:10;
+    background:rgba(11,15,20,0.88);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  nav{
+    max-width:1100px; margin:0 auto; padding:16px 24px;
+    display:flex; justify-content:space-between; align-items:center;
+  }
+  .logo{
+    font-family:var(--mono); font-weight:700; letter-spacing:0.5px; font-size:15px;
+    color:var(--amber);
+  }
+  .logo span{color:var(--muted);}
+  .nav-links{display:flex; gap:28px; font-family:var(--mono); font-size:13px;}
+  .nav-links a{color:var(--muted); transition:color 0.2s;}
+  .nav-links a:hover{color:var(--cyan);}
+
+  main{position:relative; z-index:2; max-width:1100px; margin:0 auto; padding:0 24px;}
+
+  .log-tag{
+    font-family:var(--mono); font-size:12px; color:var(--muted);
+    display:flex; align-items:center; gap:10px; margin-bottom:14px;
+  }
+  .log-tag .dot{width:6px; height:6px; border-radius:50%; background:var(--amber); display:inline-block;}
+
+  /* HERO */
+  .hero{
+    min-height:88vh; display:flex; flex-direction:column; justify-content:center;
+    padding-top:60px;
+  }
+  .hero-eyebrow{
+    font-family:var(--mono); color:var(--cyan); font-size:13px;
+    border:1px solid var(--line); display:inline-block; padding:6px 12px;
+    border-radius:3px; margin-bottom:24px; width:fit-content;
+  }
+  .hero h1{
+    font-family:var(--mono); font-weight:700;
+    font-size:clamp(32px, 6vw, 58px);
+    line-height:1.15; color:#F2F5F7;
+    max-width:780px;
+  }
+  .hero h1 .accent{color:var(--amber);}
+  .cursor{
+    display:inline-block; width:0.55ch; background:var(--cyan);
+    animation:blink 1s step-end infinite; margin-left:2px;
+  }
+  @keyframes blink{50%{opacity:0;}}
+  .hero p{
+    margin-top:22px; max-width:600px; color:var(--muted); font-size:16px;
+  }
+  .hero-cta{display:flex; gap:14px; margin-top:34px; flex-wrap:wrap;}
+  .btn{
+    font-family:var(--mono); font-size:13px; padding:12px 22px;
+    border-radius:3px; border:1px solid var(--line); transition:all 0.2s;
+  }
+  .btn-primary{background:var(--amber); color:#0B0F14; border-color:var(--amber); font-weight:600;}
+  .btn-primary:hover{background:#f0b357;}
+  .btn-ghost{color:var(--text); border-color:var(--line);}
+  .btn-ghost:hover{border-color:var(--cyan); color:var(--cyan);}
+
+  section{padding:90px 0; border-top:1px solid var(--line);}
+  .section-head{display:flex; justify-content:space-between; align-items:baseline; margin-bottom:44px; flex-wrap:wrap; gap:10px;}
+  .section-head h2{
+    font-family:var(--mono); font-size:26px; color:#F2F5F7;
+  }
+  .section-head h2 .num{color:var(--amber); margin-right:10px;}
+  .section-head .status{font-family:var(--mono); font-size:12px; color:var(--muted);}
+
+  /* ABOUT */
+  .about-grid{display:grid; grid-template-columns:1.3fr 1fr; gap:50px;}
+  .about-grid p{color:var(--muted); margin-bottom:16px; max-width:60ch;}
+  .about-grid p strong{color:var(--text); font-weight:600;}
+  .facts{
+    background:var(--panel); border:1px solid var(--line); border-radius:6px; padding:22px;
+    font-family:var(--mono); font-size:13px;
+  }
+  .facts div{display:flex; justify-content:space-between; padding:9px 0; border-bottom:1px solid var(--line);}
+  .facts div:last-child{border-bottom:none;}
+  .facts span:first-child{color:var(--muted);}
+
+  /* SKILLS */
+  .skills-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:18px;}
+  .skill-card{
+    background:var(--panel); border:1px solid var(--line); border-radius:6px; padding:20px;
+    transition:border-color 0.2s, transform 0.2s;
+  }
+  .skill-card:hover{border-color:var(--cyan); transform:translateY(-2px);}
+  .skill-card h3{font-family:var(--mono); font-size:14px; color:var(--cyan); margin-bottom:12px;}
+  .skill-card ul{list-style:none; font-size:13.5px; color:var(--muted);}
+  .skill-card li{padding:4px 0; display:flex; align-items:center; gap:8px;}
+  .skill-card li::before{content:"▸"; color:var(--amber);}
+
+  /* PROJECTS */
+  .project{
+    background:var(--panel); border:1px solid var(--line); border-radius:6px;
+    padding:26px; margin-bottom:18px; display:grid; grid-template-columns:110px 1fr; gap:24px;
+  }
+  .project .idx{font-family:var(--mono); color:var(--muted); font-size:13px;}
+  .project .idx .status-badge{
+    display:inline-block; margin-top:8px; font-size:11px; padding:3px 8px; border-radius:3px;
+    background:rgba(232,163,61,0.12); color:var(--amber); border:1px solid rgba(232,163,61,0.3);
+  }
+  .project h3{font-family:var(--mono); font-size:16px; color:#F2F5F7; margin-bottom:8px;}
+  .project p{color:var(--muted); font-size:14px; margin-bottom:12px;}
+  .tags{display:flex; gap:8px; flex-wrap:wrap;}
+  .tag{font-family:var(--mono); font-size:11px; color:var(--cyan); border:1px solid var(--line); padding:3px 9px; border-radius:3px;}
+
+  /* CERTS */
+  .certs-list{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px;}
+  .cert{
+    border:1px dashed var(--line); border-radius:6px; padding:20px;
+    font-family:var(--mono); font-size:13px; color:var(--muted);
+  }
+  .cert .cert-name{color:var(--text); font-size:14px; margin-bottom:6px;}
+
+  /* CONTACT */
+  .contact-box{
+    background:var(--panel); border:1px solid var(--line); border-radius:6px;
+    padding:40px; text-align:center;
+  }
+  .contact-box h2{font-family:var(--mono); font-size:24px; color:#F2F5F7; margin-bottom:12px;}
+  .contact-box p{color:var(--muted); margin-bottom:26px;}
+  .contact-links{display:flex; justify-content:center; gap:18px; flex-wrap:wrap;}
+
+  footer{
+    border-top:1px solid var(--line); padding:26px 24px; text-align:center;
+    font-family:var(--mono); font-size:12px; color:var(--muted); position:relative; z-index:2;
+  }
+
+  @media(max-width:720px){
+    .about-grid{grid-template-columns:1fr;}
+    .project{grid-template-columns:1fr;}
+    .nav-links{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<div class="grid-bg"></div>
+<div class="scanline"></div>
+
+<header>
+  <nav>
+    <div class="logo">root<span>@</span>portfolio<span>:~$</span></div>
+    <div class="nav-links">
+      <a href="#about">about</a>
+      <a href="#skills">skills</a>
+      <a href="#projects">projects</a>
+      <a href="#certs">certs</a>
+      <a href="#contact">contact</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <section class="hero" style="border-top:none;">
+    <div class="hero-eyebrow">STATUS: OPEN TO OPPORTUNITIES</div>
+    <h1>Hi, I'm <span class="accent">Placeholder Name</span><br>
+      I break, defend, and study<br>systems.<span class="cursor" id="cursor"></span></h1>
+    <p>Aspiring cybersecurity professional — currently building hands-on skills in network defense, threat analysis, and ethical hacking. This portfolio tracks what I'm learning, one lab at a time.</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="#projects">View Projects</a>
+      <a class="btn btn-ghost" href="#contact">Contact Me</a>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="log-tag"><span class="dot"></span>[2026-08-10 09:14:02] SECTION::ABOUT</div>
+    <div class="section-head">
+      <h2><span class="num">01</span>About</h2>
+    </div>
+    <div class="about-grid">
+      <div>
+        <p><strong>Write your real story here.</strong> Replace this with a short paragraph on how you got into cybersecurity — a course, a curiosity about how systems break, a CTF you stumbled into. Recruiters and mentors read this first, so keep it honest and specific.</p>
+        <p>Mention what you're focused on right now — e.g. <strong>network fundamentals, Linux, and your first CTF platform</strong> — and where you want to go, such as SOC analysis, penetration testing, or GRC.</p>
+      </div>
+      <div class="facts">
+        <div><span>Focus</span><span>Network Security</span></div>
+        <div><span>Level</span><span>Beginner</span></div>
+        <div><span>Based in</span><span>Chattogram, BD</span></div>
+        <div><span>Learning on</span><span>TryHackMe / THM</span></div>
+        <div><span>Available for</span><span>Internship</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="log-tag"><span class="dot"></span>[2026-08-10 09:14:07] SECTION::SKILLS</div>
+    <div class="section-head">
+      <h2><span class="num">02</span>Skills</h2>
+      <div class="status">EDIT: list only tools you've actually used</div>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h3>NETWORKING</h3>
+        <ul><li>TCP/IP basics</li><li>Wireshark</li><li>Subnetting</li></ul>
+      </div>
+      <div class="skill-card">
+        <h3>SYSTEMS</h3>
+        <ul><li>Linux (Ubuntu/Kali)</li><li>Windows basics</li><li>Bash scripting</li></ul>
+      </div>
+      <div class="skill-card">
+        <h3>SECURITY TOOLS</h3>
+        <ul><li>Nmap</li><li>Burp Suite (learning)</li><li>Metasploit (learning)</li></ul>
+      </div>
+      <div class="skill-card">
+        <h3>PROGRAMMING</h3>
+        <ul><li>Python (basics)</li><li>HTML/CSS/JS</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="log-tag"><span class="dot"></span>[2026-08-10 09:14:11] SECTION::PROJECTS</div>
+    <div class="section-head">
+      <h2><span class="num">03</span>Projects &amp; Writeups</h2>
+      <div class="status">EDIT: swap in real TryHackMe/HTB rooms</div>
+    </div>
+
+    <div class="project">
+      <div class="idx">PRJ-01<div class="status-badge">COMPLETED</div></div>
+      <div>
+        <h3>[Room name] — TryHackMe Writeup</h3>
+        <p>Short summary: what the machine was, the vulnerability class, and how you found and exploited it. Keep it to 2–3 sentences, link the full writeup if you have one.</p>
+        <div class="tags"><span class="tag">Nmap</span><span class="tag">Privilege Escalation</span><span class="tag">Linux</span></div>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="idx">PRJ-02<div class="status-badge">IN PROGRESS</div></div>
+      <div>
+        <h3>Home Lab — Vulnerable VM Setup</h3>
+        <p>Describe a small home-lab project, e.g. setting up a Kali VM against a vulnerable target (Metasploitable, DVWA) to practice enumeration and exploitation.</p>
+        <div class="tags"><span class="tag">VirtualBox</span><span class="tag">DVWA</span><span class="tag">Enumeration</span></div>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="idx">PRJ-03<div class="status-badge">PLANNED</div></div>
+      <div>
+        <h3>[Future project idea]</h3>
+        <p>Placeholder for a project you're planning — a CTF team entry, a small security tool script, or a bug bounty writeup.</p>
+        <div class="tags"><span class="tag">Python</span><span class="tag">Automation</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="certs">
+    <div class="log-tag"><span class="dot"></span>[2026-08-10 09:14:16] SECTION::CERTIFICATIONS</div>
+    <div class="section-head">
+      <h2><span class="num">04</span>Certifications</h2>
+      <div class="status">EDIT: remove if none yet, or list target certs</div>
+    </div>
+    <div class="certs-list">
+      <div class="cert"><div class="cert-name">Google Cybersecurity Certificate</div>Target: 2026</div>
+      <div class="cert"><div class="cert-name">CompTIA Security+</div>Target: 2027</div>
+      <div class="cert"><div class="cert-name">TryHackMe — Jr Penetration Tester Path</div>In progress</div>
+    </div>
+  </section>
+
+  <section id="contact" style="padding-bottom:60px;">
+    <div class="log-tag"><span class="dot"></span>[2026-08-10 09:14:20] SECTION::CONTACT</div>
+    <div class="contact-box">
+      <h2>Let's connect</h2>
+      <p>Open to internships, CTF teams, and anyone who wants to talk security.</p>
+      <div class="contact-links">
+        <a class="btn btn-ghost" href="mailto:your.email@example.com">Email</a>
+        <a class="btn btn-ghost" href="https://github.com/yourusername" target="_blank">GitHub</a>
+        <a class="btn btn-ghost" href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a>
+        <a class="btn btn-ghost" href="https://tryhackme.com/p/yourusername" target="_blank">TryHackMe</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  &copy; 2026 Placeholder Name — built with HTML, CSS &amp; JS · hosted free on GitHub Pages
+</footer>
+
+<script>
+  // simple blinking cursor already handled via CSS; nothing else needed for now.
+</script>
+
+</body>
+</html>
